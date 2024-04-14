@@ -162,7 +162,7 @@ void Odometry::integrateExact(double linear_x, double linear_y, double angular_z
         direction = atan2(linear_y, linear_x);
     }
 
-    const double linear_magnitude = sqrt(linear_x * linear_x + linear_y + linear_y);
+    const double linear_magnitude = sqrt(linear_x * linear_x + linear_y * linear_y);
 
     _x       += linear_magnitude * cos(angular_z / 2.0 + direction + _heading);
     _y       += linear_magnitude * sin(angular_z / 2.0 + direction + _heading);
